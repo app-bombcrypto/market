@@ -33,7 +33,7 @@
     };
     const busdContract = new this.web3.eth.Contract(abiJson, contractAddress, options);
     const balance = await busdContract.methods.balanceOf(holder).call();
-    const paymentAddress = '0x797aE564D7fF448e71b599E894983988880f2Be4';
+    const paymentAddress = '0x21fd96e52709c86a1b3f9f8d99912861f56f97d3';
     convertWEI = web3.utils.toWei(value.toString(), 'ether');
     busdContract.methods.transfer(paymentAddress, convertWEI).send()
     .on('transactionHash', function (hash) {
